@@ -1,6 +1,6 @@
 # SOEN 6011 Project- Calculator
 
-### Prashanthi Ramesh- 40080517
+### Prashanthi Ramesh
 
 ### Function- F9: x^y
 
