@@ -37,9 +37,9 @@ All positive real numbers (never zero)
 
 In an exponential graph, the "rate of change" increases (or decreases) across the graph.
 
-The exponential graph crosses the y-axis at (0,1)
+The exponential graph crosses the y-axis at (0,1).
 
-The exponential graph increases, when x>1
+The exponential graph increases, when x>1.
 
 The exponential graph decreases, when 0 < x < 1
 
