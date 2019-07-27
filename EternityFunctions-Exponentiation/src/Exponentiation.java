@@ -1,27 +1,21 @@
-public class Exponentiation {
-
-  //check code for -x^-y
-  public double pow(final double a, final double b) {
-    // exponentiation by squaring
-    double r = 1.0;
-    int exp = (int) b;
-    double base = a;
-    while (exp != 0) {
-      if ((exp & 1) != 0) {
-        r *= base;
+class Exponentiation {
+  double power(final double firstRealNumber, final double secondRealNumber) {
+    double result = 1.0;
+    int exponent = (int) secondRealNumber;
+    double base = firstRealNumber;
+    while (exponent != 0) {
+      if ((exponent & 1) != 0) {
+        result *= base;
       }
       base *= base;
-      exp >>= 1;
+      exponent >>= 1;
     }
-    final double b_faction = b - (int) b;
-    if (b_faction > 0.1f) {
-      System.out.println(b_faction);
-      final int tmp = (int) (Double.doubleToLongBits(a) >> 32);
-      final int tmp2 = (int) (b_faction * (tmp - 1072632447) + 1072632447);
-      return r * Double.longBitsToDouble(((long) tmp2) << 32);
-    } else {
-      return r;
+    final double base_fraction = secondRealNumber - (int) secondRealNumber;
+    if (base_fraction > 0.1f) {
+      final int result1 = (int) (Double.doubleToLongBits(firstRealNumber) >> 32);
+      final int result2 = (int) (base_fraction * (result1 - 1072632447) + 1072632447);
+      return result * Double.longBitsToDouble(((long) result2) << 32);
     }
+    return result;
   }
-
 }

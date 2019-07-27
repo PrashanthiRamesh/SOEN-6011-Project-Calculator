@@ -8,6 +8,8 @@ import javax.swing.JTextField;
 
 public class EternityFunction {
 
+  Originator originator = new Originator();
+  CareTaker careTaker = new CareTaker();
   private JTextField textFieldResults;
   private JPanel calculatorView;
   private JButton buttonClear;
@@ -29,12 +31,14 @@ public class EternityFunction {
   private JButton a0Button;
   private JButton buttonDot;
   private JButton buttonEquals;
+  private JButton historyButton;
   private Double firstRealNumber;
   private Double secondRealNumber;
   private Double result;
   private String operator;
+  private static int historyCount=0;
 
-  public EternityFunction() {
+  private EternityFunction() {
     buttonAdd.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -175,14 +179,22 @@ public class EternityFunction {
               result = firstRealNumber / secondRealNumber;
               break;
             case "^":
-              Exponentiation exponentiation=new Exponentiation();
-              result=exponentiation.pow(firstRealNumber,secondRealNumber);
+              if(secondRealNumber<0){
+                JOptionPane.showMessageDialog(null, "Invalid Operand! Please enter a value greater than 0 for y (second operand)!", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+              }else{
+                Exponentiation exponentiation=new Exponentiation();
+                result=exponentiation.power(firstRealNumber,secondRealNumber);
+              }
               break;
             default:
               JOptionPane.showMessageDialog(null, "Invalid Operator! Please start over !", "Error",
                   JOptionPane.ERROR_MESSAGE);
           }
-          textFieldResults.setText(textFieldResults.getText() + "=" + result);
+          String finalResult=textFieldResults.getText() + "=" + result;
+          textFieldResults.setText(finalResult);
+          originator.setState(finalResult);
+          careTaker.add(originator.saveStateToMemento());
         } catch (NumberFormatException exception) {
           JOptionPane
               .showMessageDialog(null, "Invalid Operand! Please enter a double precision value "
@@ -280,6 +292,22 @@ public class EternityFunction {
         textFieldResults.setText(enteredNumber);
       }
     });
+
+    historyButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        textFieldResults.setText("");
+        if(careTaker.getSize()==historyCount){
+          historyCount=0;
+        }
+        if(careTaker.getSize()>0){
+          originator.getStateFromMemento(careTaker.get(historyCount++));
+          textFieldResults.setText(originator.getState());
+        }
+
+      }
+    });
+
   }
 
   public static void main(String[] args) {
