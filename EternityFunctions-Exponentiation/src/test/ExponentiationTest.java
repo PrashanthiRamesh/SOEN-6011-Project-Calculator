@@ -7,59 +7,93 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * test class to validate the exponentiation function
+ */
 public class ExponentiationTest {
 
+  /**
+   * instance of Exponentiation class
+   */
   private Exponentiation exponentiation;
 
+  /**
+   * setup method to initialize objects
+   *
+   * @throws Exception unhandled
+   */
   @Before
   public void setUp() throws Exception {
-      this.exponentiation=new Exponentiation(0.0,0.0);
+    this.exponentiation = new Exponentiation(0.0, 0.0);
   }
 
+  /**
+   * teardown method to release objects
+   *
+   * @throws Exception unhandled
+   */
   @After
   public void tearDown() throws Exception {
-    this.exponentiation=null;
+    this.exponentiation = null;
   }
 
+  /**
+   * test if x^0=1
+   */
   @Test
   public void RealNumberRaisedToZero() {
     exponentiation.setFirstRealNumber(5.698468);
     exponentiation.setFirstRealNumber(0);
-    assertEquals(1.0,exponentiation.power(),0);
+    assertEquals(1.0, exponentiation.power(), 0);
   }
 
+  /**
+   * test if x^1=x
+   */
   @Test
   public void RealNumberExceptZeroRaisedToOne() {
     exponentiation.setFirstRealNumber(72645.3625892);
     exponentiation.setSecondRealNumber(1);
-    assertEquals(72645.3625892,exponentiation.power(),0);
+    assertEquals(72645.3625892, exponentiation.power(), 0);
   }
 
+  /**
+   * test if 0^0=1
+   */
   @Test
   public void ZeroRaisedToZero() {
     exponentiation.setFirstRealNumber(0);
     exponentiation.setSecondRealNumber(0);
-    assertEquals(1.0,exponentiation.power(),0);
+    assertEquals(1.0, exponentiation.power(), 0);
   }
 
+  /**
+   * test if 0^y=0
+   */
   @Test
   public void ZeroRaisedToRealNumber() {
     exponentiation.setFirstRealNumber(0);
     exponentiation.setSecondRealNumber(856954745.2545523);
-    assertEquals(0.0,exponentiation.power(),0);
+    assertEquals(0.0, exponentiation.power(), 0);
   }
 
+  /**
+   * test if -x^(odd)y =-result
+   */
   @Test
   public void NegativeRealNumberRaisedToOddRealNumber() {
     exponentiation.setFirstRealNumber(-4);
     exponentiation.setSecondRealNumber(7);
-    assertEquals(-16384,exponentiation.power(),0);
+    assertEquals(-16384, exponentiation.power(), 0);
   }
 
+  /**
+   * test if -x^(even)y=+result
+   */
   @Test
   public void NegativeRealNumberRaisedToEvenRealNumber() {
     exponentiation.setFirstRealNumber(-4);
     exponentiation.setSecondRealNumber(8);
-    assertEquals(65536,exponentiation.power(),0);
+    assertEquals(65536, exponentiation.power(), 0);
   }
 }

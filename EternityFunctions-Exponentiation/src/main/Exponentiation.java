@@ -21,7 +21,8 @@ public class Exponentiation {
 
   /**
    * Creates a exponentiation function using the operands
-   * @param firstRealNumber The first operand of the operator
+   *
+   * @param firstRealNumber  The first operand of the operator
    * @param secondRealNumber The second operand of the operator
    */
   public Exponentiation(double firstRealNumber, double secondRealNumber) {
@@ -31,6 +32,7 @@ public class Exponentiation {
 
   /**
    * Getter for the first operand
+   *
    * @return the first operand
    */
   public double getFirstRealNumber() {
@@ -39,6 +41,7 @@ public class Exponentiation {
 
   /**
    * Setter for the first operand
+   *
    * @param firstRealNumber the first operand
    */
   public void setFirstRealNumber(double firstRealNumber) {
@@ -47,6 +50,7 @@ public class Exponentiation {
 
   /**
    * Getter for the second operand
+   *
    * @return the second operand
    */
   public double getSecondRealNumber() {
@@ -55,6 +59,7 @@ public class Exponentiation {
 
   /**
    * Setter for the second operand
+   *
    * @param secondRealNumber the second operand
    */
   public void setSecondRealNumber(double secondRealNumber) {
@@ -62,7 +67,9 @@ public class Exponentiation {
   }
 
   /**
-   * Calculates the exponentiation function x^y using bitwise approximation method for the fractional part
+   * Calculates the exponentiation function x^y using bitwise approximation method for the
+   * fractional part
+   *
    * @return power of two operands
    */
   public double power() {
@@ -79,6 +86,7 @@ public class Exponentiation {
 
   /**
    * Calculates the exponentiation function using squaring method for the non-fractional part
+   *
    * @param power power of two operands
    * @return power of two operands
    */

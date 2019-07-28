@@ -19,6 +19,7 @@ public class CareTaker {
 
   /**
    * Add state to the memento List
+   *
    * @param state current state
    */
   public void add(Memento state) {
@@ -27,6 +28,7 @@ public class CareTaker {
 
   /**
    * Get the state based on the index value
+   *
    * @param index position in the list
    * @return state of the object
    */
@@ -36,6 +38,7 @@ public class CareTaker {
 
   /**
    * Get the size of the memento list
+   *
    * @return size of the memento list
    */
   int getSize() {

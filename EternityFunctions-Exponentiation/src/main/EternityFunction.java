@@ -9,7 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * The Eternity Function application performs the basic four arithmetic operations and also calculates the power of 2 real numbers
+ * The Eternity Function application performs the basic four arithmetic operations and also
+ * calculates the power of 2 real numbers
  *
  * @author Prashanthi Ramesh
  * @version 1.0
@@ -76,25 +77,26 @@ public class EternityFunction {
   /**
    * number of operations stored in memento
    */
-  private static int historyCount=0;
+  private static int historyCount = 0;
 
   /**
    * current text of the text field
    */
-  private String textFieldResultsText="";
+  private String textFieldResultsText = "";
 
   /**
    * flag to check if first operand is real number or not
    */
-  private static boolean firstNotRealNumber=false;
+  private static boolean firstNotRealNumber = false;
 
   /**
    * flag to check if second operand is real number or not
    */
-  private static boolean secondNotRealNumber=false;
+  private static boolean secondNotRealNumber = false;
 
   /**
    * Getter to get the text of results text field
+   *
    * @return the text of the results text field
    */
   public String getTextFieldResultsText() {
@@ -103,6 +105,7 @@ public class EternityFunction {
 
   /**
    * Setter for the results text field
+   *
    * @param textFieldResultsText text for the results text field
    */
   public void setTextFieldResultsText(String textFieldResultsText) {
@@ -111,6 +114,7 @@ public class EternityFunction {
 
   /**
    * Getter for the first real operand
+   *
    * @return first real operand
    */
   public Double getFirstRealNumber() {
@@ -119,6 +123,7 @@ public class EternityFunction {
 
   /**
    * Setter for the first real operand
+   *
    * @param firstRealNumber first real operand
    */
   public void setFirstRealNumber(Double firstRealNumber) {
@@ -127,6 +132,7 @@ public class EternityFunction {
 
   /**
    * Getter for the second real operand
+   *
    * @return second real operand
    */
   public Double getSecondRealNumber() {
@@ -135,6 +141,7 @@ public class EternityFunction {
 
   /**
    * Setter for the second real operand
+   *
    * @param secondRealNumber second real operand
    */
   public void setSecondRealNumber(Double secondRealNumber) {
@@ -143,6 +150,7 @@ public class EternityFunction {
 
   /**
    * Getter for the flag of first real operand
+   *
    * @return boolean flag to specify if first operand is real number
    */
   public boolean isFirstNotRealNumber() {
@@ -151,6 +159,7 @@ public class EternityFunction {
 
   /**
    * Setter for the flag of first real operand
+   *
    * @param firstNotRealNumber first real operand
    */
   public void setFirstNotRealNumber(boolean firstNotRealNumber) {
@@ -159,6 +168,7 @@ public class EternityFunction {
 
   /**
    * Getter for the flag of second real operand
+   *
    * @return flag of second real operand
    */
   public boolean isSecondNotRealNumber() {
@@ -167,6 +177,7 @@ public class EternityFunction {
 
   /**
    * Setter for the flag of second real operand
+   *
    * @param secondNotRealNumber second real operand
    */
   public void setSecondNotRealNumber(boolean secondNotRealNumber) {
@@ -175,6 +186,7 @@ public class EternityFunction {
 
   /**
    * Getter for the operator
+   *
    * @return operator
    */
   public String getOperator() {
@@ -183,6 +195,7 @@ public class EternityFunction {
 
   /**
    * Setter for the operator
+   *
    * @param operator operator
    */
   public void setOperator(String operator) {
@@ -194,13 +207,13 @@ public class EternityFunction {
    */
   public EternityFunction() {
 
-    originator=new Originator();
-    careTaker=new CareTaker();
+    originator = new Originator();
+    careTaker = new CareTaker();
 
     buttonAdd.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        textFieldResultsText=textFieldResults.getText();
+        textFieldResultsText = textFieldResults.getText();
         actionPerformedByOperators("+");
       }
     });
@@ -208,7 +221,7 @@ public class EternityFunction {
     buttonSubtract.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        textFieldResultsText=textFieldResults.getText();
+        textFieldResultsText = textFieldResults.getText();
         actionPerformedByOperators("-");
       }
     });
@@ -216,7 +229,7 @@ public class EternityFunction {
     buttonMultiply.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        textFieldResultsText=textFieldResults.getText();
+        textFieldResultsText = textFieldResults.getText();
         actionPerformedByOperators("*");
       }
     });
@@ -224,7 +237,7 @@ public class EternityFunction {
     buttonDivide.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        textFieldResultsText=textFieldResults.getText();
+        textFieldResultsText = textFieldResults.getText();
         actionPerformedByOperators("/");
       }
     });
@@ -232,7 +245,7 @@ public class EternityFunction {
     buttonPower.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        textFieldResultsText=textFieldResults.getText();
+        textFieldResultsText = textFieldResults.getText();
         actionPerformedByOperators("^");
       }
     });
@@ -363,10 +376,10 @@ public class EternityFunction {
       @Override
       public void actionPerformed(ActionEvent e) {
         textFieldResults.setText("");
-        if(careTaker.getSize()==historyCount){
-          historyCount=0;
+        if (careTaker.getSize() == historyCount) {
+          historyCount = 0;
         }
-        if(careTaker.getSize()>0){
+        if (careTaker.getSize() > 0) {
           originator.getStateFromMemento(careTaker.get(historyCount++));
           textFieldResults.setText(originator.getState());
         }
@@ -380,11 +393,13 @@ public class EternityFunction {
    * Get the value of the text field and validate the number to perform the operation
    */
   public void actionPerformedByEqualsOperator() {
-    String subTextValue = textFieldResultsText.substring(textFieldResultsText.indexOf(operator) + 1);
+    String subTextValue = textFieldResultsText
+        .substring(textFieldResultsText.indexOf(operator) + 1);
     try {
       secondRealNumber = Double.parseDouble(subTextValue);
-      secondNotRealNumber=false;
-      BasicArithmeticOps basicArithmeticOps=new BasicArithmeticOps(firstRealNumber, secondRealNumber);
+      secondNotRealNumber = false;
+      BasicArithmeticOps basicArithmeticOps = new BasicArithmeticOps(firstRealNumber,
+          secondRealNumber);
       switch (operator) {
         case "+":
           result = basicArithmeticOps.add();
@@ -399,24 +414,26 @@ public class EternityFunction {
           result = basicArithmeticOps.divide();
           break;
         case "^":
-          if(isaNegativeValue()){
-            JOptionPane.showMessageDialog(null, "Invalid Operand! Please enter a value greater than 0 for y (second operand)!", "Error",
+          if (isaNegativeValue()) {
+            JOptionPane.showMessageDialog(null,
+                "Invalid Operand! Please enter a value greater than 0 for y (second operand)!",
+                "Error",
                 JOptionPane.ERROR_MESSAGE);
-          }else{
-            Exponentiation exponentiation=new Exponentiation(firstRealNumber, secondRealNumber);
-            result=exponentiation.power();
+          } else {
+            Exponentiation exponentiation = new Exponentiation(firstRealNumber, secondRealNumber);
+            result = exponentiation.power();
           }
           break;
         default:
           JOptionPane.showMessageDialog(null, "Invalid Operator! Please start over !", "Error",
               JOptionPane.ERROR_MESSAGE);
       }
-      String finalResult=textFieldResults.getText() + "=" + result;
+      String finalResult = textFieldResults.getText() + "=" + result;
       textFieldResults.setText(finalResult);
       originator.setState(finalResult);
       careTaker.add(originator.saveStateToMemento());
     } catch (NumberFormatException exception) {
-      secondNotRealNumber=true;
+      secondNotRealNumber = true;
       JOptionPane
           .showMessageDialog(null, "Invalid Operand! Please enter a double precision value "
                   + "between 4.94065645841246544e-324d and 1.79769313486231570e+308d", "Error",
@@ -427,14 +444,16 @@ public class EternityFunction {
 
   /**
    * Checks if second operand is a negative value or not
+   *
    * @return
    */
   public boolean isaNegativeValue() {
-    return secondRealNumber<0;
+    return secondRealNumber < 0;
   }
 
   /**
    * Get the value of the text field and validate to append operand to operator
+   *
    * @param operator current operator
    */
   public void actionPerformedByOperators(String operator) {
@@ -442,9 +461,9 @@ public class EternityFunction {
       firstRealNumber = Double.parseDouble(textFieldResultsText);
       textFieldResults.setText(firstRealNumber + operator);
       this.operator = operator;
-      firstNotRealNumber=false;
+      firstNotRealNumber = false;
     } catch (NumberFormatException exception) {
-      firstNotRealNumber=true;
+      firstNotRealNumber = true;
       JOptionPane
           .showMessageDialog(null, "Invalid Operand! Please enter a double precision value "
                   + "between 4.94065645841246544e-324d and 1.79769313486231570e+308d", "Error",
@@ -455,6 +474,7 @@ public class EternityFunction {
 
   /**
    * Creates the Calculator view and initiates the application
+   *
    * @param args command line arguments
    */
   public static void main(String[] args) {

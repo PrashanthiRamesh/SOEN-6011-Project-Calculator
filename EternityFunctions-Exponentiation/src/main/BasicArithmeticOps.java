@@ -1,7 +1,8 @@
 package main;
 
 /**
- * Represents basic arithmetic operations like Addition, Subtraction, Multiplication and Division in a Calculator
+ * Represents basic arithmetic operations like Addition, Subtraction, Multiplication and Division in
+ * a Calculator
  *
  * @author Prashanthi Ramesh
  * @version 1.0
@@ -21,7 +22,8 @@ public class BasicArithmeticOps {
 
   /**
    * Creates a new basic arithmetic operation with the given operands
-   * @param firstRealNumber The first operand of the operator
+   *
+   * @param firstRealNumber  The first operand of the operator
    * @param secondRealNumber The second operand of the operator
    */
   public BasicArithmeticOps(double firstRealNumber, double secondRealNumber) {
@@ -31,6 +33,7 @@ public class BasicArithmeticOps {
 
   /**
    * Getter for the first operand
+   *
    * @return The first operand
    */
   public double getFirstRealNumber() {
@@ -39,6 +42,7 @@ public class BasicArithmeticOps {
 
   /**
    * Setter for the first operand
+   *
    * @param firstRealNumber The first operand
    */
   public void setFirstRealNumber(double firstRealNumber) {
@@ -47,6 +51,7 @@ public class BasicArithmeticOps {
 
   /**
    * Getter for the second operand
+   *
    * @return The second operand
    */
   public double getSecondRealNumber() {
@@ -55,6 +60,7 @@ public class BasicArithmeticOps {
 
   /**
    * Setter for the second operand
+   *
    * @param secondRealNumber The second operand
    */
   public void setSecondRealNumber(double secondRealNumber) {
@@ -63,6 +69,7 @@ public class BasicArithmeticOps {
 
   /**
    * Addition of two real numbers
+   *
    * @return the sum of first and second operand
    */
   public double add() {
@@ -71,6 +78,7 @@ public class BasicArithmeticOps {
 
   /**
    * Subtraction of two real numbers
+   *
    * @return the difference between first and second operand
    */
   public double subtract() {
@@ -79,6 +87,7 @@ public class BasicArithmeticOps {
 
   /**
    * Multiplication of two real numbers
+   *
    * @return the product of first and second operand
    */
   public double multiply() {
@@ -87,6 +96,7 @@ public class BasicArithmeticOps {
 
   /**
    * Division of two real numbers
+   *
    * @return the quotient of first and second operand
    */
   public double divide() {

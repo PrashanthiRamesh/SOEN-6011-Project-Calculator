@@ -16,6 +16,7 @@ class Memento {
 
   /**
    * Creates a storage of the current state
+   *
    * @param state state of the object
    */
   Memento(String state) {
@@ -24,6 +25,7 @@ class Memento {
 
   /**
    * Getter of the current state
+   *
    * @return state of the object
    */
   String getState() {

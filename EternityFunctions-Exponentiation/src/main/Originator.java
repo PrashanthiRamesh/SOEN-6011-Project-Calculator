@@ -16,6 +16,7 @@ public class Originator {
 
   /**
    * Setter for the state of the object
+   *
    * @param state state of the object
    */
   public void setState(String state) {
@@ -24,6 +25,7 @@ public class Originator {
 
   /**
    * Getter for the state of the object
+   *
    * @return state of the object
    */
   public String getState() {
@@ -32,6 +34,7 @@ public class Originator {
 
   /**
    * Saves the state to in the memento
+   *
    * @return the memento instance of the state
    */
   public Memento saveStateToMemento() {
@@ -40,6 +43,7 @@ public class Originator {
 
   /**
    * Get the state from the memento instance
+   *
    * @param memento instance
    */
   public void getStateFromMemento(Memento memento) {
