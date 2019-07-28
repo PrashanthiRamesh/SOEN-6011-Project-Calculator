@@ -8,11 +8,18 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * The Eternity Function application performs the basic four arithmetic operations and also calculates the power of 2 real numbers
+ *
+ * @author Prashanthi Ramesh
+ * @version 1.0
+ * @since 2019-07-26
+ */
 public class EternityFunction {
 
-  private Originator originator;
-  private CareTaker careTaker;
-  private JTextField textFieldResults;
+  /**
+   * Java Swing instances
+   */
   private JPanel calculatorView;
   private JButton buttonClear;
   private JButton button7;
@@ -34,63 +41,157 @@ public class EternityFunction {
   private JButton buttonDot;
   private JButton buttonEquals;
   private JButton historyButton;
+  private JTextField textFieldResults;
+
+  /**
+   * Originator instance
+   */
+  private Originator originator;
+
+  /**
+   * Caretaker instance
+   */
+  private CareTaker careTaker;
+
+  /**
+   * first real operand
+   */
   private Double firstRealNumber;
+
+  /**
+   * second real operand
+   */
   private Double secondRealNumber;
+
+  /**
+   * result of the operation
+   */
   private Double result;
+
+  /**
+   * operator
+   */
   private String operator;
+
+  /**
+   * number of operations stored in memento
+   */
   private static int historyCount=0;
+
+  /**
+   * current text of the text field
+   */
   private String textFieldResultsText="";
+
+  /**
+   * flag to check if first operand is real number or not
+   */
   private static boolean firstNotRealNumber=false;
+
+  /**
+   * flag to check if second operand is real number or not
+   */
   private static boolean secondNotRealNumber=false;
 
+  /**
+   * Getter to get the text of results text field
+   * @return the text of the results text field
+   */
   public String getTextFieldResultsText() {
     return textFieldResultsText;
   }
 
+  /**
+   * Setter for the results text field
+   * @param textFieldResultsText text for the results text field
+   */
   public void setTextFieldResultsText(String textFieldResultsText) {
     this.textFieldResultsText = textFieldResultsText;
   }
 
+  /**
+   * Getter for the first real operand
+   * @return first real operand
+   */
   public Double getFirstRealNumber() {
     return firstRealNumber;
   }
 
+  /**
+   * Setter for the first real operand
+   * @param firstRealNumber first real operand
+   */
   public void setFirstRealNumber(Double firstRealNumber) {
     this.firstRealNumber = firstRealNumber;
   }
 
+  /**
+   * Getter for the second real operand
+   * @return second real operand
+   */
   public Double getSecondRealNumber() {
     return secondRealNumber;
   }
 
+  /**
+   * Setter for the second real operand
+   * @param secondRealNumber second real operand
+   */
   public void setSecondRealNumber(Double secondRealNumber) {
     this.secondRealNumber = secondRealNumber;
   }
 
+  /**
+   * Getter for the flag of first real operand
+   * @return boolean flag to specify if first operand is real number
+   */
   public boolean isFirstNotRealNumber() {
     return firstNotRealNumber;
   }
 
+  /**
+   * Setter for the flag of first real operand
+   * @param firstNotRealNumber first real operand
+   */
   public void setFirstNotRealNumber(boolean firstNotRealNumber) {
-    this.firstNotRealNumber = firstNotRealNumber;
+    EternityFunction.firstNotRealNumber = firstNotRealNumber;
   }
 
+  /**
+   * Getter for the flag of second real operand
+   * @return flag of second real operand
+   */
   public boolean isSecondNotRealNumber() {
     return secondNotRealNumber;
   }
 
+  /**
+   * Setter for the flag of second real operand
+   * @param secondNotRealNumber second real operand
+   */
   public void setSecondNotRealNumber(boolean secondNotRealNumber) {
-    this.secondNotRealNumber = secondNotRealNumber;
+    EternityFunction.secondNotRealNumber = secondNotRealNumber;
   }
 
+  /**
+   * Getter for the operator
+   * @return operator
+   */
   public String getOperator() {
     return operator;
   }
 
+  /**
+   * Setter for the operator
+   * @param operator operator
+   */
   public void setOperator(String operator) {
     this.operator = operator;
   }
 
+  /**
+   * Creates an Eternity Function
+   */
   public EternityFunction() {
 
     originator=new Originator();
@@ -275,8 +376,10 @@ public class EternityFunction {
 
   }
 
+  /**
+   * Get the value of the text field and validate the number to perform the operation
+   */
   public void actionPerformedByEqualsOperator() {
-    //get the value of textbox..fetch only values after operator..validate the number..if ok...perform operation
     String subTextValue = textFieldResultsText.substring(textFieldResultsText.indexOf(operator) + 1);
     try {
       secondRealNumber = Double.parseDouble(subTextValue);
@@ -322,12 +425,19 @@ public class EternityFunction {
     }
   }
 
+  /**
+   * Checks if second operand is a negative value or not
+   * @return
+   */
   public boolean isaNegativeValue() {
     return secondRealNumber<0;
   }
 
+  /**
+   * Get the value of the text field and validate to append operand to operator
+   * @param operator current operator
+   */
   public void actionPerformedByOperators(String operator) {
-    // get the value of text box, validate it for a real number, if it is ok append operand1 with operator
     try {
       firstRealNumber = Double.parseDouble(textFieldResultsText);
       textFieldResults.setText(firstRealNumber + operator);
@@ -343,6 +453,10 @@ public class EternityFunction {
     }
   }
 
+  /**
+   * Creates the Calculator view and initiates the application
+   * @param args command line arguments
+   */
   public static void main(String[] args) {
     JFrame frame = new JFrame("Eternity Function- x^y");
     frame.setContentPane(new EternityFunction().calculatorView);
