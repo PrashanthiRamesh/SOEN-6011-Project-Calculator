@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 
 /**
  * The Eternity Function application performs the basic four arithmetic operations and also
- * calculates the power of 2 real numbers
+ * calculates the power of 2 real numbers.
  *
  * @author Prashanthi Ramesh
  * @version 1.0
@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 public class EternityFunction {
 
   /**
-   * Java Swing instances
+   * Java Swing instances.
    */
   private JPanel calculatorView;
   private JButton buttonClear;
@@ -45,57 +45,57 @@ public class EternityFunction {
   private JTextField textFieldResults;
 
   /**
-   * Originator instance
+   * Originator instance.
    */
   private Originator originator;
 
   /**
-   * Caretaker instance
+   * Caretaker instance.
    */
   private CareTaker careTaker;
 
   /**
-   * first real operand
+   * first real operand.
    */
   private Double firstRealNumber;
 
   /**
-   * second real operand
+   * second real operand.
    */
   private Double secondRealNumber;
 
   /**
-   * result of the operation
+   * result of the operation.
    */
   private Double result;
 
   /**
-   * operator
+   * operator.
    */
   private String operator;
 
   /**
-   * number of operations stored in memento
+   * number of operations stored in memento.
    */
   private static int historyCount = 0;
 
   /**
-   * current text of the text field
+   * current text of the text field.
    */
   private String textFieldResultsText = "";
 
   /**
-   * flag to check if first operand is real number or not
+   * flag to check if first operand is real number or not.
    */
   private static boolean firstNotRealNumber = false;
 
   /**
-   * flag to check if second operand is real number or not
+   * flag to check if second operand is real number or not.
    */
   private static boolean secondNotRealNumber = false;
 
   /**
-   * Getter to get the text of results text field
+   * Getter to get the text of results text field.
    *
    * @return the text of the results text field
    */
@@ -104,7 +104,7 @@ public class EternityFunction {
   }
 
   /**
-   * Setter for the results text field
+   * Setter for the results text field.
    *
    * @param textFieldResultsText text for the results text field
    */
@@ -113,7 +113,7 @@ public class EternityFunction {
   }
 
   /**
-   * Getter for the first real operand
+   * Getter for the first real operand.
    *
    * @return first real operand
    */
@@ -122,7 +122,7 @@ public class EternityFunction {
   }
 
   /**
-   * Setter for the first real operand
+   * Setter for the first real operand.
    *
    * @param firstRealNumber first real operand
    */
@@ -131,7 +131,7 @@ public class EternityFunction {
   }
 
   /**
-   * Getter for the second real operand
+   * Getter for the second real operand.
    *
    * @return second real operand
    */
@@ -140,7 +140,7 @@ public class EternityFunction {
   }
 
   /**
-   * Setter for the second real operand
+   * Setter for the second real operand.
    *
    * @param secondRealNumber second real operand
    */
@@ -149,7 +149,7 @@ public class EternityFunction {
   }
 
   /**
-   * Getter for the flag of first real operand
+   * Getter for the flag of first real operand.
    *
    * @return boolean flag to specify if first operand is real number
    */
@@ -158,7 +158,7 @@ public class EternityFunction {
   }
 
   /**
-   * Setter for the flag of first real operand
+   * Setter for the flag of first real operand.
    *
    * @param firstNotRealNumber first real operand
    */
@@ -167,7 +167,7 @@ public class EternityFunction {
   }
 
   /**
-   * Getter for the flag of second real operand
+   * Getter for the flag of second real operand.
    *
    * @return flag of second real operand
    */
@@ -176,7 +176,7 @@ public class EternityFunction {
   }
 
   /**
-   * Setter for the flag of second real operand
+   * Setter for the flag of second real operand.
    *
    * @param secondNotRealNumber second real operand
    */
@@ -185,7 +185,7 @@ public class EternityFunction {
   }
 
   /**
-   * Getter for the operator
+   * Getter for the operator.
    *
    * @return operator
    */
@@ -194,7 +194,7 @@ public class EternityFunction {
   }
 
   /**
-   * Setter for the operator
+   * Setter for the operator.
    *
    * @param operator operator
    */
@@ -203,7 +203,7 @@ public class EternityFunction {
   }
 
   /**
-   * Creates an Eternity Function
+   * Creates an Eternity Function.
    */
   public EternityFunction() {
 
@@ -253,7 +253,6 @@ public class EternityFunction {
     buttonAbsolute.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        // get the value of text box, validate it for a real number, if it is ok perform absolute operation
         try {
           firstRealNumber = Double.parseDouble(textFieldResults.getText());
           textFieldResults.setText(Double.toString(-firstRealNumber));
@@ -390,7 +389,7 @@ public class EternityFunction {
   }
 
   /**
-   * Get the value of the text field and validate the number to perform the operation
+   * Get the value of the text field and validate the number to perform the operation.
    */
   public void actionPerformedByEqualsOperator() {
     String subTextValue = textFieldResultsText
@@ -416,7 +415,7 @@ public class EternityFunction {
         case "^":
           if (isaNegativeValue()) {
             JOptionPane.showMessageDialog(null,
-                "Invalid Operand! Please enter a value greater than 0 for y (second operand)!",
+                "Invalid Operand! Enter a value greater than or equal to 0 for y (second operand)!",
                 "Error",
                 JOptionPane.ERROR_MESSAGE);
           } else {
@@ -443,7 +442,7 @@ public class EternityFunction {
   }
 
   /**
-   * Checks if second operand is a negative value or not
+   * Checks if second operand is a negative value or not.
    *
    * @return
    */
@@ -452,7 +451,7 @@ public class EternityFunction {
   }
 
   /**
-   * Get the value of the text field and validate to append operand to operator
+   * Get the value of the text field and validate to append operand to operator.
    *
    * @param operator current operator
    */
@@ -473,7 +472,7 @@ public class EternityFunction {
   }
 
   /**
-   * Creates the Calculator view and initiates the application
+   * Creates the Calculator view and initiates the application.
    *
    * @param args command line arguments
    */

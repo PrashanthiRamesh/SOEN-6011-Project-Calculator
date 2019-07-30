@@ -75,10 +75,10 @@ public class Exponentiation {
   public double power() {
     double result = 1.0;
     result = powerBySquaring(result);
-    final double base_fraction = this.secondRealNumber - (int) this.secondRealNumber;
-    if (base_fraction > 0.1f) {
+    final double baseFraction = this.secondRealNumber - (int) this.secondRealNumber;
+    if (baseFraction > 0.1f) {
       final int result1 = (int) (Double.doubleToLongBits(this.firstRealNumber) >> 32);
-      final int result2 = (int) (base_fraction * (result1 - 1072632447) + 1072632447);
+      final int result2 = (int) (baseFraction * (result1 - 1072632447) + 1072632447);
       return result * Double.longBitsToDouble(((long) result2) << 32);
     }
     return result;

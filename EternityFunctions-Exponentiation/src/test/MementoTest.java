@@ -9,22 +9,22 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * test class for memento pattern to save state of the calculator application
+ * test class for memento pattern to save state of the calculator application.
  */
 public class MementoTest {
 
   /**
-   * instance of Originator class
+   * instance of Originator class.
    */
   private Originator originator;
 
   /**
-   * instance of CareTaker class
+   * instance of CareTaker class.
    */
   private CareTaker careTaker;
 
   /**
-   * setup method to initialize objects
+   * setup method to initialize objects.
    *
    * @throws Exception unhandled
    */
@@ -35,7 +35,7 @@ public class MementoTest {
   }
 
   /**
-   * teardown method to release objects
+   * teardown method to release objects.
    *
    * @throws Exception unhandled
    */
@@ -46,7 +46,7 @@ public class MementoTest {
   }
 
   /**
-   * test if the saved states of the calculator is correct using memento pattern
+   * test if the saved states of the calculator is correct using memento pattern.
    */
   @Test
   public void historyOfOperations() {
