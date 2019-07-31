@@ -1,0 +1,5 @@
+Code Review by Kishan Rakholiya
+
+ExponentiationTest.java -> Please rename all the method to camel case
+In src directory -> Some methods are unused specially, setter method. 
+        If you are not using it you can remove them as it is unreachable code
