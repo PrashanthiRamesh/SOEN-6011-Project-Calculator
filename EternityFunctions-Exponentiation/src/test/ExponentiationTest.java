@@ -41,7 +41,7 @@ public class ExponentiationTest {
    * test if x^0=1
    */
   @Test
-  public void RealNumberRaisedToZero() {
+  public void realNumberRaisedToZero() {
     exponentiation.setFirstRealNumber(5.698468);
     exponentiation.setFirstRealNumber(0);
     assertEquals(1.0, exponentiation.power(), 0);
@@ -51,7 +51,7 @@ public class ExponentiationTest {
    * test if x^1=x
    */
   @Test
-  public void RealNumberExceptZeroRaisedToOne() {
+  public void realNumberExceptZeroRaisedToOne() {
     exponentiation.setFirstRealNumber(72645.3625892);
     exponentiation.setSecondRealNumber(1);
     assertEquals(72645.3625892, exponentiation.power(), 0);
@@ -61,7 +61,7 @@ public class ExponentiationTest {
    * test if 0^0=1
    */
   @Test
-  public void ZeroRaisedToZero() {
+  public void zeroRaisedToZero() {
     exponentiation.setFirstRealNumber(0);
     exponentiation.setSecondRealNumber(0);
     assertEquals(1.0, exponentiation.power(), 0);
@@ -71,7 +71,7 @@ public class ExponentiationTest {
    * test if 0^y=0
    */
   @Test
-  public void ZeroRaisedToRealNumber() {
+  public void zeroRaisedToRealNumber() {
     exponentiation.setFirstRealNumber(0);
     exponentiation.setSecondRealNumber(856954745.2545523);
     assertEquals(0.0, exponentiation.power(), 0);
@@ -81,7 +81,7 @@ public class ExponentiationTest {
    * test if -x^(odd)y =-result
    */
   @Test
-  public void NegativeRealNumberRaisedToOddRealNumber() {
+  public void negativeRealNumberRaisedToOddRealNumber() {
     exponentiation.setFirstRealNumber(-4);
     exponentiation.setSecondRealNumber(7);
     assertEquals(-16384, exponentiation.power(), 0);
@@ -91,7 +91,7 @@ public class ExponentiationTest {
    * test if -x^(even)y=+result
    */
   @Test
-  public void NegativeRealNumberRaisedToEvenRealNumber() {
+  public void negativeRealNumberRaisedToEvenRealNumber() {
     exponentiation.setFirstRealNumber(-4);
     exponentiation.setSecondRealNumber(8);
     assertEquals(65536, exponentiation.power(), 0);
