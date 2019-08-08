@@ -99,15 +99,6 @@ public class EternityFunction {
   private static boolean secondNotRealNumber = false;
 
   /**
-   * Getter to get the text of results text field.
-   *
-   * @return the text of the results text field
-   */
-  public String getTextFieldResultsText() {
-    return textFieldResultsText;
-  }
-
-  /**
    * Setter for the results text field.
    *
    * @param textFieldResultsText text for the results text field
@@ -117,30 +108,12 @@ public class EternityFunction {
   }
 
   /**
-   * Getter for the first real operand.
-   *
-   * @return first real operand
-   */
-  public Double getFirstRealNumber() {
-    return firstRealNumber;
-  }
-
-  /**
    * Setter for the first real operand.
    *
    * @param firstRealNumber first real operand
    */
   public void setFirstRealNumber(Double firstRealNumber) {
     this.firstRealNumber = firstRealNumber;
-  }
-
-  /**
-   * Getter for the second real operand.
-   *
-   * @return second real operand
-   */
-  public Double getSecondRealNumber() {
-    return secondRealNumber;
   }
 
   /**
@@ -161,14 +134,6 @@ public class EternityFunction {
     return firstNotRealNumber;
   }
 
-  /**
-   * Setter for the flag of first real operand.
-   *
-   * @param firstNotRealNumber first real operand
-   */
-  public void setFirstNotRealNumber(boolean firstNotRealNumber) {
-    EternityFunction.firstNotRealNumber = firstNotRealNumber;
-  }
 
   /**
    * Getter for the flag of second real operand.
@@ -178,25 +143,7 @@ public class EternityFunction {
   public boolean isSecondNotRealNumber() {
     return secondNotRealNumber;
   }
-
-  /**
-   * Setter for the flag of second real operand.
-   *
-   * @param secondNotRealNumber second real operand
-   */
-  public void setSecondNotRealNumber(boolean secondNotRealNumber) {
-    EternityFunction.secondNotRealNumber = secondNotRealNumber;
-  }
-
-  /**
-   * Getter for the operator.
-   *
-   * @return operator
-   */
-  public String getOperator() {
-    return operator;
-  }
-
+  
   /**
    * Setter for the operator.
    *

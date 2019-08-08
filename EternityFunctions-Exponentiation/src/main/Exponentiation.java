@@ -31,30 +31,12 @@ public class Exponentiation {
   }
 
   /**
-   * Getter for the first operand
-   *
-   * @return the first operand
-   */
-  public double getFirstRealNumber() {
-    return firstRealNumber;
-  }
-
-  /**
    * Setter for the first operand
    *
    * @param firstRealNumber the first operand
    */
   public void setFirstRealNumber(double firstRealNumber) {
     this.firstRealNumber = firstRealNumber;
-  }
-
-  /**
-   * Getter for the second operand
-   *
-   * @return the second operand
-   */
-  public double getSecondRealNumber() {
-    return secondRealNumber;
   }
 
   /**

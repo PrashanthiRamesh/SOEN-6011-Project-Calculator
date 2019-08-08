@@ -32,30 +32,12 @@ public class BasicArithmeticOps {
   }
 
   /**
-   * Getter for the first operand
-   *
-   * @return The first operand
-   */
-  public double getFirstRealNumber() {
-    return firstRealNumber;
-  }
-
-  /**
    * Setter for the first operand
    *
    * @param firstRealNumber The first operand
    */
   public void setFirstRealNumber(double firstRealNumber) {
     this.firstRealNumber = firstRealNumber;
-  }
-
-  /**
-   * Getter for the second operand
-   *
-   * @return The second operand
-   */
-  public double getSecondRealNumber() {
-    return secondRealNumber;
   }
 
   /**
